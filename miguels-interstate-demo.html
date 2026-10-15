@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miguel's Interstate — Moving, Junk Removal & Snow Removal | Aurora, IL</title>
+<meta name="description" content="Miguel's Interstate — moving, junk removal, and snow removal in Aurora, IL. One call. Three services. Zero stress.">
+<style>
+  :root{
+    --asphalt:#201D19;     /* warm-tinted black */
+    --asphalt-2:#292520;
+    --road:#38322A;
+    --paper:#F1EDE4;       /* 60% light */
+    --card:#FFFFFF;
+    --amber:#C09532;       /* muted highway yellow, 10% */
+    --amber-deep:#9E7A26;
+    --text:#F1EDE4;
+    --text-dark:#2A251F;
+    --muted:#B3AA99;
+    --muted-dark:#6E6659;
+    --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--asphalt);color:var(--text);overflow-x:hidden;line-height:1.6;-webkit-text-size-adjust:100%}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* chevron hazard trim */
+  .chevrons{height:14px;background:repeating-linear-gradient(-55deg,var(--amber) 0 26px,var(--asphalt) 26px 52px)}
+
+  /* ---------- NAV ---------- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(32,29,25,.96);backdrop-filter:blur(8px);border-bottom:2px solid var(--amber)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{font-weight:900;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+  .brand span{color:var(--amber)}
+  .nav-links{display:none;gap:24px}
+  .nav-links a{text-decoration:none;font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{display:inline-block;background:var(--amber);color:#201D19;text-decoration:none;font-weight:900;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:11px 22px;border-radius:4px;white-space:nowrap}
+  .nav-cta:hover{background:#D4A83E}
+  @media(min-width:760px){.nav-links{display:flex}}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:90px 0 70px;background:
+    radial-gradient(90% 70% at 50% 0%,rgba(192,149,50,.14),transparent 60%),
+    linear-gradient(180deg,var(--asphalt),var(--asphalt-2));overflow:hidden}
+  .road-line{position:absolute;left:0;right:0;top:0;height:100%;pointer-events:none;opacity:.5;
+    background-image:repeating-linear-gradient(180deg,transparent 0 34px,rgba(241,237,228,.14) 34px 62px);
+    -webkit-mask-image:linear-gradient(90deg,transparent 44%,#000 46%,#000 54%,transparent 56%);
+    mask-image:linear-gradient(90deg,transparent 44%,#000 46%,#000 54%,transparent 56%)}
+  .hero .wrap{position:relative;text-align:center}
+  .route-badge{display:inline-flex;align-items:center;gap:10px;border:2px solid var(--amber);border-radius:8px;padding:10px 20px;font-weight:900;letter-spacing:.24em;text-transform:uppercase;font-size:.78rem;color:var(--amber);margin-bottom:24px;background:rgba(192,149,50,.08)}
+  .hero h1{font-size:clamp(2.7rem,10vw,5.4rem);font-weight:900;text-transform:uppercase;line-height:.95;letter-spacing:-.01em}
+  .hero h1 .y{color:var(--amber)}
+  .hero p.lede{color:var(--muted);font-size:1.1rem;max-width:580px;margin:24px auto 38px;font-weight:500}
+  .btn-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+  .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:.92rem;padding:17px 34px;border-radius:4px;min-height:56px}
+  .btn-solid{background:var(--amber);color:#201D19}
+  .btn-solid:hover{background:#D4A83E}
+  .btn-line{border:2px solid rgba(241,237,228,.4);color:var(--text)}
+  .btn-line:hover{border-color:var(--text)}
+  .three-up{display:grid;grid-template-columns:1fr;gap:12px;margin-top:54px;text-align:left}
+  @media(min-width:720px){.three-up{grid-template-columns:repeat(3,1fr)}}
+  .svc-mini{background:var(--road);border:1px solid rgba(241,237,228,.12);border-radius:8px;padding:26px 24px;position:relative;overflow:hidden}
+  .svc-mini::after{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--amber)}
+  .svc-mini .no{font-weight:900;font-size:.75rem;letter-spacing:.24em;color:var(--amber);text-transform:uppercase}
+  .svc-mini h3{font-size:1.35rem;font-weight:900;text-transform:uppercase;margin:8px 0 6px;letter-spacing:.01em}
+  .svc-mini p{color:var(--muted);font-size:.93rem}
+
+  /* ---------- LIGHT SECTIONS ---------- */
+  .light{background:var(--paper);color:var(--text-dark)}
+  section{padding:74px 0}
+  .sec-eyebrow{font-size:.76rem;font-weight:900;letter-spacing:.3em;text-transform:uppercase;color:var(--amber-deep);margin-bottom:14px}
+  h2{font-size:clamp(1.9rem,6vw,3rem);font-weight:900;text-transform:uppercase;line-height:1.02;letter-spacing:-.01em;margin-bottom:14px}
+  .sec-sub{color:var(--muted-dark);max-width:620px;margin-bottom:42px}
+
+  .detail-grid{display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:700px){.detail-grid{grid-template-columns:1fr 1fr}}
+  .detail{background:var(--card);border-radius:10px;padding:30px 28px;border-top:6px solid var(--amber);box-shadow:0 14px 34px -20px rgba(42,37,31,.35)}
+  .detail h3{font-size:1.15rem;font-weight:900;text-transform:uppercase;margin-bottom:8px}
+  .detail p{font-size:.95rem;color:var(--muted-dark)}
+  .detail ul{list-style:none;margin-top:14px}
+  .detail li{font-size:.9rem;color:var(--muted-dark);padding:6px 0 6px 26px;position:relative}
+  .detail li::before{content:"▸";position:absolute;left:4px;color:var(--amber-deep);font-weight:900}
+
+  /* ---------- DARK WHY ---------- */
+  .why{background:var(--asphalt-2);border-top:1px solid rgba(241,237,228,.1);border-bottom:1px solid rgba(241,237,228,.1)}
+  .why .sec-eyebrow{color:var(--amber)}
+  .why h2{color:var(--text)}
+  .why .sec-sub{color:var(--muted)}
+  .why-grid{display:grid;gap:14px;grid-template-columns:1fr}
+  @media(min-width:700px){.why-grid{grid-template-columns:1fr 1fr}}
+  .why-card{display:flex;gap:18px;background:var(--asphalt);border:1px solid rgba(241,237,228,.12);border-radius:8px;padding:26px}
+  .why-card .big{font-size:2rem;font-weight:900;color:var(--amber);flex:none;line-height:1}
+  .why-card h3{font-size:1.02rem;font-weight:800;text-transform:uppercase;margin-bottom:4px}
+  .why-card p{color:var(--muted);font-size:.93rem}
+
+  /* area */
+  .area-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .area-row span{background:var(--card);border:2px solid var(--asphalt);border-radius:6px;padding:10px 20px;font-weight:800;font-size:.86rem;letter-spacing:.06em;text-transform:uppercase}
+
+  /* contact */
+  .contact{background:linear-gradient(160deg,var(--asphalt),#171411);text-align:center}
+  .contact h2{color:var(--text)}
+  .contact p{color:var(--muted);max-width:540px;margin:0 auto 34px}
+  .mail-big{display:inline-block;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:clamp(.9rem,3.6vw,1.2rem);color:var(--amber);border:2px solid var(--amber);border-radius:6px;padding:18px 28px;text-decoration:none;word-break:break-all;font-weight:700}
+  .mail-big:hover{background:var(--amber);color:#201D19}
+
+  footer{background:#141210;color:var(--muted);padding:36px 0;font-size:.86rem}
+  footer .wrap{display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center}
+  footer a{color:var(--text);text-decoration:none}
+  .demo-note{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#6E6659}
+</style>
+</head>
+<body>
+<div class="chevrons"></div>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Miguel's <span>Interstate</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Area</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="#contact">Get a Quote</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="road-line"></div>
+  <div class="wrap">
+    <span class="route-badge">▸ Aurora, Illinois ◂</span>
+    <h1>One Call.<br>Three Services.<br><span class="y">Zero Stress.</span></h1>
+    <p class="lede">Miguel's Interstate handles the heavy lifting in Aurora, IL — moving homes, hauling junk, and clearing snow. One reliable crew for the jobs nobody wants to do alone.</p>
+    <div class="btn-row">
+      <a class="btn btn-solid" href="mailto:miguelsinterstate@gmail.com?subject=Quote%20request%20—%20Miguel's%20Interstate">Email for a Quote</a>
+      <a class="btn btn-line" href="https://www.facebook.com/Michael-Valencia-232319666639399/" target="_blank" rel="noopener">Facebook Page</a>
+    </div>
+    <div class="three-up">
+      <div class="svc-mini"><div class="no">Service 01</div><h3>Moving</h3><p>Homes and apartments moved carefully — furniture wrapped, loaded, and delivered without the drama.</p></div>
+      <div class="svc-mini"><div class="no">Service 02</div><h3>Junk Removal</h3><p>Garages, basements, yards, and leftovers — we haul it away so you don't have to.</p></div>
+      <div class="svc-mini"><div class="no">Service 03</div><h3>Snow Removal</h3><p>Driveways and walkways cleared fast when the snow hits. Wake up to a clear path.</p></div>
+    </div>
+  </div>
+</header>
+<div class="chevrons"></div>
+
+<section class="light" id="services">
+  <div class="wrap">
+    <p class="sec-eyebrow">Full Service List</p>
+    <h2>What We Haul, Move &amp; Clear</h2>
+    <p class="sec-sub">Straightforward pricing, hard work, and respect for your property on every single job.</p>
+    <div class="detail-grid">
+      <div class="detail">
+        <h3>Residential Moving</h3>
+        <p>Local moves done right — from studio apartments to full family homes.</p>
+        <ul><li>Furniture wrapping &amp; protection</li><li>Loading, transport &amp; unloading</li><li>Careful handling of heavy items</li></ul>
+      </div>
+      <div class="detail">
+        <h3>Junk Removal</h3>
+        <p>One call clears the clutter — you point, we lift and haul.</p>
+        <ul><li>Furniture &amp; mattress removal</li><li>Garage &amp; basement cleanouts</li><li>Yard debris &amp; construction leftovers</li></ul>
+      </div>
+      <div class="detail">
+        <h3>Snow Removal</h3>
+        <p>Winter doesn't wait, and neither do we.</p>
+        <ul><li>Driveway plowing &amp; shoveling</li><li>Walkways &amp; sidewalks cleared</li><li>Seasonal or per-storm service</li></ul>
+      </div>
+      <div class="detail">
+        <h3>Loading &amp; Unloading Help</h3>
+        <p>Got the truck, need the muscle? We'll load or unload it properly.</p>
+        <ul><li>Rental truck loading</li><li>POD &amp; container unloading</li><li>Single heavy-item moves</li></ul>
+      </div>
+      <div class="detail">
+        <h3>Property Cleanouts</h3>
+        <p>Evictions, estates, and rental turnovers cleared out completely.</p>
+        <ul><li>Full-unit cleanouts</li><li>Appliance removal</li><li>Broom-clean finish</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <p class="sec-eyebrow">Why Miguel's</p>
+    <h2>Hard Work, Honest Price</h2>
+    <p class="sec-sub">No call centers, no subcontractor roulette — you deal directly with the crew doing the work.</p>
+    <div class="why-grid">
+      <div class="why-card"><div class="big">01</div><div><h3>One Call Does It All</h3><p>Moving, junk, snow — a single number for three services means one less thing to coordinate.</p></div></div>
+      <div class="why-card"><div class="big">02</div><div><h3>Upfront Pricing</h3><p>You approve the price before we lift a finger. No hourly-meter anxiety, no surprise fees.</p></div></div>
+      <div class="why-card"><div class="big">03</div><div><h3>We Treat It Like Ours</h3><p>Walls, floors, and doorframes protected. Your home looks the same when we leave — just emptier or fuller, as ordered.</p></div></div>
+      <div class="why-card"><div class="big">04</div><div><h3>Fast Scheduling</h3><p>Need it gone this week? Usually we can. Message us and we'll find a slot that works.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="area">
+  <div class="wrap">
+    <p class="sec-eyebrow">Service Area</p>
+    <h2>Based in Aurora, Serving the Fox Valley</h2>
+    <p class="sec-sub">Local moves, junk hauls, and snow clearing across the western suburbs.</p>
+    <div class="area-row">
+      <span>Aurora</span><span>Naperville</span><span>Elgin</span><span>Oswego</span><span>Montgomery</span><span>Bolingbrook</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="sec-eyebrow" style="color:var(--amber)">Get In Touch</p>
+    <h2>Let's Get It Moved</h2>
+    <p>Email what you need — moving date, junk to haul, or snow to clear — and get a fast, honest quote back.</p>
+    <a class="mail-big" href="mailto:miguelsinterstate@gmail.com?subject=Quote%20request%20—%20Miguel's%20Interstate">miguelsinterstate@gmail.com</a>
+    <div class="btn-row" style="margin-top:28px">
+      <a class="btn btn-line" href="https://www.facebook.com/Michael-Valencia-232319666639399/" target="_blank" rel="noopener">Message on Facebook</a>
+    </div>
+  </div>
+</section>
+<div class="chevrons"></div>
+
+<footer>
+  <div class="wrap">
+    <div>Miguel's Interstate · Aurora, IL · <a href="mailto:miguelsinterstate@gmail.com">miguelsinterstate@gmail.com</a></div>
+    <div class="demo-note">Demo website concept by Wahab Codes</div>
+  </div>
+</footer>
+
+</body>
+</html>
